@@ -60,8 +60,26 @@ namespace XamarinAndroidBlankFramework
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050001
+			public const int backButton = 2131034113;
+			
+			// aapt resource value: 0x7f050006
+			public const int btn_find = 2131034118;
+			
+			// aapt resource value: 0x7f050005
+			public const int editview_class = 2131034117;
+			
+			// aapt resource value: 0x7f050003
+			public const int editview_name = 2131034115;
+			
 			// aapt resource value: 0x7f050000
-			public const int MyButton = 2131034112;
+			public const int textView1 = 2131034112;
+			
+			// aapt resource value: 0x7f050004
+			public const int textview_class_label = 2131034116;
+			
+			// aapt resource value: 0x7f050002
+			public const int textview_name_label = 2131034114;
 			
 			static Id()
 			{
@@ -77,7 +95,10 @@ namespace XamarinAndroidBlankFramework
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int Activity_Second = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Main = 2130903041;
 			
 			static Layout()
 			{
