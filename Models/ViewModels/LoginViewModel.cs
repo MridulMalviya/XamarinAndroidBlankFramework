@@ -38,13 +38,14 @@ namespace ITC.SeedBank.Tool.ViewModels
             set
             {               
                 Set((() => Model), ref _model, value);
+                
             }
         }
 
        
 
         //1. Getter and Setter for communicating with View----------------------------------------------------------
-        private String _userName = "";
+        private string _userName = "";
         public string UserName
         {
             get
@@ -53,14 +54,15 @@ namespace ITC.SeedBank.Tool.ViewModels
             }
             set
             {
-                Set(ref _userName, value);
-                //Set( ( ) => UserName, ref _userName, value );
-                RaisePropertyChanged("UserName");
+                //Set(ref _userName, value);
+                Set( ( ) => UserName, ref _userName, value );
+                //RaisePropertyChanged("UserName");
+                LoginCommand.RaiseCanExecuteChanged();
             }
         }
 
 
-        private String _password= "";      
+        private string _password = "";      
         public string Password
         {
             get
@@ -69,15 +71,13 @@ namespace ITC.SeedBank.Tool.ViewModels
             }
             set
             {
-                Set(ref _password, value);
-                RaisePropertyChanged("Password");
+                Set(() => Password, ref _password, value);
+                //RaisePropertyChanged("Password");
+                LoginCommand.RaiseCanExecuteChanged();
             }
         }
 
-
-
-
-
+       
         //2. Command ----------------------------------------------------------------------------------
         private RelayCommand _loginCommand;
         public RelayCommand LoginCommand
@@ -91,16 +91,19 @@ namespace ITC.SeedBank.Tool.ViewModels
                     if (result)
                     {
                         //navigate to Dashboard
-                        navigationService.NavigateTo(ViewModelLocator.SecondPageKey,Model);
+                        if (navigationService != null && Model!=null)
+                        {
+                            navigationService.NavigateTo(ViewModelLocator.SecondPageKey,Model);
+                        }
                     }
-                }));
+                }, CanLogin));
             }
         }
 
         public bool CanLogin()
         {
             //valide fileds 
-            return ClassUtils.ValidateLoginFields(UserName, Password);
+            return  ClassUtils.ValidateLoginFields(UserName, Password);
         }
 
       
@@ -119,8 +122,7 @@ namespace ITC.SeedBank.Tool.ViewModels
         /// <summary>
         /// Define commands for Login
         /// </summary>
-        private RelayCommand _cancelCommand;       
-    
+        private RelayCommand _cancelCommand;
         public RelayCommand CancelCommand
         {
             get
@@ -134,8 +136,8 @@ namespace ITC.SeedBank.Tool.ViewModels
 
         }
 
-        
 
+        
         //---------------------------------------------------------------------------
     }
 }

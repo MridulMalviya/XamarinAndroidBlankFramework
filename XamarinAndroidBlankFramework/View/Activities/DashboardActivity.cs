@@ -24,7 +24,6 @@ namespace XamarinAndroidBlankFramework.View.Activities
         private TextView mTextViewCustName;
         private TextView mTextViewUserName;
         private ViewModelLocator _viewModelLocator;
-        private LoginDataModel _model;
         private LoginDataModel param;
 
         public NavigationService Nav
@@ -42,18 +41,6 @@ namespace XamarinAndroidBlankFramework.View.Activities
             Init();
             InitView();
             BindingData();
-        }
-
-        public LoginDataModel Model
-        {
-            get
-            {
-                return _model;
-            }
-            set
-            {
-                _model = value;               
-            }
         }
 
         private void Init()
@@ -75,7 +62,7 @@ namespace XamarinAndroidBlankFramework.View.Activities
             mTextViewUserId = (TextView)FindViewById(Resource.Id.textvuew_dashboard_userid);
             mTextViewCustName = (TextView)FindViewById(Resource.Id.textview_dashboard_customername);
             mTextViewUserName = (TextView)FindViewById(Resource.Id.textview_dashboard_username);
-            mTextViewUserId.Text = param.UserID;
+            mTextViewUserId.Text =   param.UserID;
             mTextViewCustName.Text = param.CustomerName;
             mTextViewUserName.Text = param.UserName;
         }

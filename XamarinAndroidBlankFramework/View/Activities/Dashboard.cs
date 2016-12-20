@@ -110,8 +110,7 @@ namespace XamarinAndroidBlankFramework.View.Activities
         {
             // Actuate the NavigateCommand on the VM.
             button.SetCommand("Click", ViewModel.NavigateCommand);
-            // button.SetCommand("Click", ViewModel.CheckClassNameCommand);
-            
+            // button.SetCommand("Click", ViewModel.CheckClassNameCommand);            
            // button.SetCommand("Click", ViewModel.ParaClassNameCommand);
         }
     }

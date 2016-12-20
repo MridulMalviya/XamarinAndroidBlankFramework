@@ -45,6 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="password"
+        android:inputType="textPassword"
         android:textSize="18sp" />
     <Button
         android:background="@android:color/darker_gray"

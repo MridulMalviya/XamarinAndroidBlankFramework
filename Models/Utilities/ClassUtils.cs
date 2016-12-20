@@ -14,7 +14,7 @@ namespace ITC.SeedBank.Tool.Utilities
         {
             if (ValidateUserName(userName))
             {
-                if (ValidateUserName(password))
+                if (ValidatePassword(password))
                 {
                     return true;
                 }

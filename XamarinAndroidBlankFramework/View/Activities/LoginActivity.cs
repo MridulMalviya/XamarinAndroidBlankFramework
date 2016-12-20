@@ -14,6 +14,7 @@ using GalaSoft.MvvmLight.Helpers;
 using GalaSoft.MvvmLight.Threading;
 using GalaSoft.MvvmLight.Views;
 using GalaSoft.MvvmLight.Ioc;
+using XamarinAndroidBlankFramework.Common;
 
 /// <summary>
 /// View connects with ViewModel
@@ -21,7 +22,7 @@ using GalaSoft.MvvmLight.Ioc;
 namespace XamarinAndroidBlankFramework.View.Activities
 {
     [Activity(Label = "Demo", MainLauncher = true, Icon = "@drawable/icon")]
-    public class LoginActivity : Activity
+    public class LoginActivity : ActivityBase
     {
         // Keep track of bindings to avoid premature garbage collection
         private readonly List<Binding> bindings = new List<Binding>();
@@ -44,7 +45,7 @@ namespace XamarinAndroidBlankFramework.View.Activities
 
         private void Init()
         {
-            _viewModelLocator = new ViewModelLocator();
+
             // Initialize the MVVM Light DispatcherHelper.
             // This needs to be called on the UI thread.
             DispatcherHelper.Initialize();
@@ -61,15 +62,15 @@ namespace XamarinAndroidBlankFramework.View.Activities
             nav.Configure(ViewModelLocator.SecondPageKey, typeof(DashboardActivity));
             SimpleIoc.Default.Register<INavigationService>(() => nav);
             //define navigation 
-            
+            _viewModelLocator = new ViewModelLocator();
 
 
-            
+
         }
 
         private void InitView()
         {
-            mEditTextUserName = (EditText)FindViewById(Resource.Id.edittext_login_password);
+            mEditTextUserName = (EditText)FindViewById(Resource.Id.edittext_login_username);
             mEditTextPassword = (EditText)FindViewById(Resource.Id.edittext_login_password);
             mBtnSubmit = (Button)FindViewById(Resource.Id.btn_login_submit);
             DoLogin();
@@ -79,16 +80,19 @@ namespace XamarinAndroidBlankFramework.View.Activities
 
         private void BindingData()
         {
-            var bind = this.SetBinding(() => _viewModelLocator.LoginVM.UserName, () => mEditTextUserName.Text, BindingMode.OneWay);
+            var bind = this.SetBinding(() => _viewModelLocator.LoginVM.UserName, () => mEditTextUserName.Text, BindingMode.TwoWay);
             bindings.Add(bind);
-            bind = this.SetBinding(() => _viewModelLocator.LoginVM.Password, () => mEditTextPassword.Text, BindingMode.OneWay);
+            bind = null;
+            bind = this.SetBinding(() => _viewModelLocator.LoginVM.Password, () => mEditTextPassword.Text, BindingMode.TwoWay);
             bindings.Add(bind);
+            //bind = this.SetBinding(() => _viewModelLocator.LoginVM.CanLogin(), () => mBtnSubmit.Enabled, BindingMode.TwoWay);
         }
 
         private void DoLogin()
         {
             mBtnSubmit.SetCommand("Click", _viewModelLocator.LoginVM.LoginCommand);
         }
+
 
         //-------------------------------------------------------------------
     }
