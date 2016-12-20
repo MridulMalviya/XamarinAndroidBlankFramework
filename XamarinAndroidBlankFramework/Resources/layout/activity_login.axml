@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="22dp">
+    <TextView
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:text="Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User Name"
+        android:textSize="22sp"
+        android:textColor="@android:color/black" />
+    <EditText
+        android:textColorHint="#d3d3d3"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="5dp"
+        android:id="@+id/edittext_login_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="user name"
+        android:textSize="18sp" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="22sp"
+        android:textColor="@android:color/black" />
+    <EditText
+        android:textColorHint="#d3d3d3"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="5dp"
+        android:id="@+id/edittext_login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:textSize="18sp" />
+    <Button
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="10dp"
+        android:text="Login"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        android:id="@+id/btn_login_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

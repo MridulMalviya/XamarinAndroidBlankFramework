@@ -19,7 +19,8 @@
             android:gravity="center"
             android:text="Name"
             android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp" 
+            />
         <EditText
             android:id="@+id/editview_name"
             android:layout_width="wrap_content"
@@ -28,7 +29,8 @@
             android:gravity="left"
             android:hint="name"
             android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,5 +64,7 @@
         android:layout_marginTop="10dp"
         android:text="Find"
         android:textColor="@android:color/black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        Command="{Binding ParaClassNameCommand}"
+        CommandParameter="{Binding StudentName,Element=editview_name}" />
 </LinearLayout>

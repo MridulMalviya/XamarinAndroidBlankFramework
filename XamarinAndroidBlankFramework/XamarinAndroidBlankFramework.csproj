@@ -69,6 +69,8 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Activities\Dashboard.cs" />
+    <Compile Include="View\Activities\DashboardActivity.cs" />
+    <Compile Include="View\Activities\LoginActivity.cs" />
     <Compile Include="View\Activities\SecondActivity.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +79,12 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\Activity_Second.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_login.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_dashboard.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -99,6 +107,10 @@
     <Folder Include="View\Fragments\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ITC.SeedBank.Tool.CoreModel\ITC.SeedBank.Tool.CoreModel.csproj">
+      <Project>{322123FF-FC04-47E6-9F8E-E84CB8DB9510}</Project>
+      <Name>ITC.SeedBank.Tool.CoreModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\ITC.SeedBank.Tool.CoreViewModel.csproj">
       <Project>{15A0D61F-FF85-48C5-8E7F-0DB6CFD9451A}</Project>
       <Name>ITC.SeedBank.Tool.CoreViewModel</Name>

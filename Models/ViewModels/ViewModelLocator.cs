@@ -24,6 +24,7 @@ namespace ITC.SeedBank.Tool.ViewModels
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             //pp SimpleIoc registers class with ServiceLocator
             SimpleIoc.Default.Register<DashboardViewModel>();
+            SimpleIoc.Default.Register<LoginViewModel>();
         }
 
         public DashboardViewModel DashboardVM
@@ -32,6 +33,15 @@ namespace ITC.SeedBank.Tool.ViewModels
             {
                 //pp ServiceLocator.Current return the registered class instance
                 return ServiceLocator.Current.GetInstance<DashboardViewModel>();
+            }
+        }
+
+
+        public LoginViewModel LoginVM
+        {
+            get
+            {                
+                return ServiceLocator.Current.GetInstance<LoginViewModel>();
             }
         }
 

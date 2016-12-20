@@ -10,9 +10,10 @@ using XamarinAndroidBlankFramework.Common;
 using GalaSoft.MvvmLight.Helpers;
 using System;
 
+//http://tutorialsface.blogspot.in/2014/07/music-player-with-notification-and-lock.html
 namespace XamarinAndroidBlankFramework.View.Activities
 {
-    [Activity(Label = "Dashboard", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Dashboard", MainLauncher = false, Icon = "@drawable/icon")]
     public class Dashboard : ActivityBase
     {
         // Keep track of bindings to avoid premature garbage collection
@@ -96,7 +97,7 @@ namespace XamarinAndroidBlankFramework.View.Activities
         {
             // Binding between the TextView and the ViewModel property.
             // Keep track of the binding to avoid premature garbage collection
-             var bind = this.SetBinding(() => ViewModel.ClassName, () => className1.Text, BindingMode.TwoWay);
+             var bind = this.SetBinding(() => ViewModel.StudentName, () => name.Text, BindingMode.TwoWay);
              bindings.Add(bind);
              bind = this.SetBinding(() => ViewModel.ClassName, () => className1.Text, BindingMode.TwoWay);
              bindings.Add(bind);
@@ -107,8 +108,10 @@ namespace XamarinAndroidBlankFramework.View.Activities
         private void navigatePage()
         {
             // Actuate the NavigateCommand on the VM.
-            // button.SetCommand("Click", ViewModel.NavigateCommand);
-            button.SetCommand("Click", ViewModel.CheckClassNameCommand);
+            button.SetCommand("Click", ViewModel.NavigateCommand);
+            // button.SetCommand("Click", ViewModel.CheckClassNameCommand);
+            
+           // button.SetCommand("Click", ViewModel.ParaClassNameCommand);
         }
     }
 }

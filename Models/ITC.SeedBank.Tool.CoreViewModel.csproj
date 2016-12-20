@@ -35,14 +35,16 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <Folder Include="Commands\" />
     <Folder Include="Constants\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Networks\" />
-    <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Utilities\ClassUtils.cs" />
     <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>

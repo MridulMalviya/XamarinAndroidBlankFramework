@@ -31,18 +31,18 @@ namespace ITC.SeedBank.Tool.ViewModels
         /// <summary>
         /// getter and setter for className
         /// </summary>
-        public string ClassName
-        {
-            get
+            public string ClassName
             {
-                return className;
+                get
+                {
+                    return className;
+                }
+                set
+                {
+                    Set(ref className, value);
+                    RaisePropertyChanged("ClassName");
+                }
             }
-            set
-            {
-                Set(ref className, value);
-                RaisePropertyChanged("ClassName");
-            }
-        }
 
 
         public string StudentName
@@ -89,6 +89,26 @@ namespace ITC.SeedBank.Tool.ViewModels
         }
 
 
+        private RelayCommand<string> paraCommand;
+        public RelayCommand<string> ParaClassNameCommand
+        {
+            //set
+            //{
+            //    RelayCommand<string> checkClassNameCommand = new RelayCommand<string>(e => FindClassName(e));
+            //}
+            get
+            {
+                return paraCommand ?? (paraCommand = new RelayCommand<String>((s) => FindClassName(s)));
+            }
+        }
+
+        private void FindClassName(string name)
+        {
+            Log.Debug("ITC","name "+name);
+            ClassName = "" + _classNameModel.findClassName(StudentName);
+        }
+
+
 
         /// <summary>
         /// call to corresponding model class to find the class name WRT given name
@@ -98,7 +118,7 @@ namespace ITC.SeedBank.Tool.ViewModels
         public void FindClassName()
         {
             //Log.Debug("ITC","name "+name);
-            ClassName = "" + _classNameModel.findClassName(StudentName);
+            ClassName = "" + _classNameModel.findClassName(className);
         }
     }
 }
