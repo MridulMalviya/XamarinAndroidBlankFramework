@@ -11,6 +11,7 @@ using GalaSoft.MvvmLight.Helpers;
 using System;
 
 //http://tutorialsface.blogspot.in/2014/07/music-player-with-notification-and-lock.html
+
 namespace XamarinAndroidBlankFramework.View.Activities
 {
     [Activity(Label = "Dashboard", MainLauncher = false, Icon = "@drawable/icon")]
